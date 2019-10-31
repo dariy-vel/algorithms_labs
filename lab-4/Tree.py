@@ -14,6 +14,7 @@ class Tree:
         self.people = []
 
     def add_person(self, person):
+        print("new_person")
         person_nodes = []
         if len(self.people) == 0:
             for loved_beer in person:
