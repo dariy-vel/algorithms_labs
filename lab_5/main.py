@@ -4,16 +4,16 @@ def angry_beaver(binary_in, x):
     insert_string = ""
     while len(insert_string) <= len(binary_in):
         insert_string = "{0:b}".format(pow(x, power))
-        binary_x.insert(0, insert_string)
+        binary_x.append(insert_string)
         power += 1
 
     def solution(input, counter=0):
+        arr = []
         for i in range(0, len(binary_in)):
             if input[i:] in binary_x:
                 counter += 1
-                counter = solution(input[:i], counter)
-                break
-        return counter
+                arr.append(solution(input[:i], counter))
+        return 1
 
     return solution(binary_in)
 
